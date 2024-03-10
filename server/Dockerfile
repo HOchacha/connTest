@@ -4,5 +4,5 @@ WORKDIR /root/server
 
 COPY server.py .
 
-CMD ["python", server.py"]
+CMD ["python3","server.py"]
 

@@ -1,0 +1,11 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: my-destination-rule
+spec:
+  host: echo-server.test.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+      cipherSuites:
+      - ECDHE-ECDSA-AES256-GCM-SHA384

@@ -4,4 +4,4 @@ WORKDIR /root/client
 
 COPY client.py .
 
-CMD ["python", "client.py"]
+CMD ["python3", "client.py"]

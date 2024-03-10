@@ -14,5 +14,6 @@ spec:
     spec:
       containers:
       - name: echo-client
-        image: hochacha/echo-client
-
+        image: hochacha/echo-client:latest
+        ports:
+        - containerPort: 65432
