@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: echo-client
+      annotations:
+        inject.istio.io/templates: custom
     spec:
       containers:
       - name: echo-client
