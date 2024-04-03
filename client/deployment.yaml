@@ -12,7 +12,7 @@ spec:
       labels:
         app: echo-client
       annotations:
-        inject.istio.io/templates: custom
+        inject.istio.io/templates: sidecar, custom
     spec:
       containers:
       - name: echo-client
