@@ -1,0 +1,9 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  profile: default
+  hub: docker.io/hochacha
+  tag: tls_version_1_2
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true

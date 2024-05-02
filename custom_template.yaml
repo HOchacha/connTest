@@ -2,12 +2,3 @@ apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
   name: istio
-spec:
-  values:
-    sidecarInjectorWebhook:
-      templates:
-        custom: |
-          spec:
-            containers:
-            - name: istio-proxy
-              image: hochacha/proxyv2:hochacha_prox

@@ -11,11 +11,9 @@ spec:
     metadata:
       labels:
         app: echo-client
-      annotations:
-        inject.istio.io/templates: sidecar, custom
     spec:
       containers:
       - name: echo-client
-        image: hochacha/echo-client:latest
+        image: hochacha/echo-client:other_namespace
         ports:
         - containerPort: 65432

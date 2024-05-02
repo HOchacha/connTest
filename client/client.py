@@ -4,7 +4,7 @@ import time
 def start_client():
     while True:
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.connect(('echo-server', 12345))
+        client_socket.connect(('echo-server.test', 12345))
         client_socket.sendall(b'Hello world')
         data = client_socket.recv(1024)
         print(f"Received {data} from server")
