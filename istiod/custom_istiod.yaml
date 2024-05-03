@@ -1,0 +1,18 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  profile: default
+  hub: docker.io/hochacha
+  tag: tls_version_1_2
+  meshConfig:
+    accessLogFile: "/dev/stdout"
+    outboundTrafficPolicy:
+      mode: REGISTRY_ONLY
+    enableTracing: true
+    defaultConfig:
+      proxyMetadata:
+        ISTIO_META_DNS_CAPTURE: "true"
+        ISTIO_META_DNS_AUTO_ALLOCATE: "true"
+    meshMTLS:
+      cipherSuites:
+        - ECDHE-RSA-AES256-GCM-SHA384

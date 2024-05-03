@@ -7,10 +7,17 @@ def start_server():
 
     while True:
         client_socket, addr = server_socket.accept()
-        data = client_socket.recv(1024)
-        print(f"Received {data} from {addr}")
-        client_socket.sendall(data)
-        client_socket.close()
+        try:
+            while True:
+                data = client_socket.recv(1024)
+                if not data:
+                    break
+                print(f"Received {data} from {addr}")
+                client_socket.sendall(data)
+        except ConnectionResetError:
+            print("Client disconnected")
+        finally:
+            client_socket.close()
 
 if __name__ == "__main__":
     start_server()
