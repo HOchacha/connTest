@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: annotation-cipher-reader
+  namespace: test
+  annotations: 
+    cipher: "ECDHE-AES256-GCM-SHA384"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: annotation-cipher-reader
+  template:
+    metadata:
+      labels:
+        app: annotation-cipher-reader
+    spec:
+      containers:
+      - name: annotation-cipher-reader
+        image: hochacha/annotation-cipher-reader:latest
+        env:
+        - name: CIPHER
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        ports:
+        - containerPort: 65432
