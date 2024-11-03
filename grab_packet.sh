@@ -16,4 +16,7 @@ TIMESTAMP=$(date +%Y%m%d%H%M%S)
 FILENAME="./${TIMESTAMP}_${POD_NAME}_${NAMESPACE}.pcap"
 
 # execute tcpdump
-tcpdump -i any '(src '$POD_IP' or dst '$POD_IP')' -w $FILENAME
+sudo tcpdump -i any '(src '$POD_IP' or dst '$POD_IP')' -w $FILENAME
+
+
+#10.244.225.178

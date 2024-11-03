@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 12345
       - name: bpf
-        image: boanlab/bpftools:in_eg 
+        image: hochacha/bpf-container:sleep
         imagePullPolicy: Always
         securityContext:
           privileged: true
