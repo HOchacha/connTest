@@ -1,6 +1,6 @@
 # Connection Test in k8s & Istio Environment
 - This repository is for building echo server & client and check the network packet with tcpdump
-- Nov. 04, 2024: Add Runtime Ciphersuites Tracking program
+- Nov. 04, 2024: Add runtime ciphersuites tracking program powered by bpf
 # Scripts
 ### deploy_echo.sh
 deploy echo-server and echo-client in `test` k8s namespace
